@@ -1,0 +1,12 @@
+.flex-container {
+    display: block;
+    justify-content: space-between; /* Espacio equitativo entre elementos */
+    align-items: center; /* Alinea verticalmente en el centro */
+    flex-wrap: wrap; /* Envuelve elementos cuando no caben en una sola fila */
+  }
+  
+  .flex-container > div {
+    flex-basis: calc(25% - 20px); /* Ancho de cada elemento, considerando el espacio entre ellos */
+    margin: 10px; /* Espacio entre elementos */
+  }
+  

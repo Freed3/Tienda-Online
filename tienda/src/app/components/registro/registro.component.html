@@ -1,0 +1,57 @@
+
+<app-nav></app-nav>
+<main  
+class="cs-page-wrapper">
+  <h3>Mi cuenta</h3>
+  <ul class="ps-breadcrumb">
+    <li><a style="cursor:pointer" [routerLink]="['/']">Inicio</a></li>
+    <li class="active"><a>Mi cuenta</a></li>
+  </ul>
+  <nav class="bg-secondary mb-3" aria-label="breadcrumb">
+    <div class="container">
+      <ul class="ps-tab-list">
+        <li class="inicio" type="submit" [routerLink]="['/login']"><a>Iniciar sesión</a></li>
+        <li  class="registro" type="submit" [routerLink]="['/login/registro']"><a>Registrate</a></li>
+      </ul>
+    </div>
+  </nav>
+</main>
+
+<section class="container pt-3 pt-md-4 pb-3 pb-sm-4 pb-lg-5 mb-4">
+<div class="col-lg-6">
+  <div class="ps-tab"  >
+    <h3 class="modal-title mt-4 mb-0 text-center">Registrate</h3>
+
+    <form #registroForm="ngForm" (ngSubmit)="registro(registroForm)">
+      <div class="form-group">
+        <input class="form-control" type="text"  placeholder="Nombres" required="" name="nombres" [(ngModel)]="new_user.nombres">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text"  placeholder="Apellidos" required="" name="apellidos" [(ngModel)]="new_user.apellidos">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="email" placeholder="Tu correo electrónico" required="" name="email" [(ngModel)]="new_user.email">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Tu contraseña" required="" name="password" [(ngModel)]="new_user.password">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Numero de Cedula" required="" name="dni" [(ngModel)]="new_user.dni">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="date" required="" name="f_nacimiento" [(ngModel)]="new_user.f_nacimiento">
+      </div>
+      <div class="ps-form__desc">
+        <p>Sus datos personales se utilizarán para respaldar su experiencia en este sitio web, para administrar el acceso a su cuenta y para otros fines descritos en nuestra <a [routerLink]="['/terminos-condiciones']" routerLinkActive="router-link-active" ><b>política de privacidad</b></a>.</p>
+      </div>
+      
+      <div class="form-group submit">
+        <button  type="submit" class="btn btn-primary btn-block">Registrarme</button>
+      </div>
+    </form>
+    
+</div>
+</div>
+</section>
+
+<app-footer></app-footer>

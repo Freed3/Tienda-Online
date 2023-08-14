@@ -1,0 +1,141 @@
+<app-sidebar></app-sidebar>
+
+
+          <!-- Page title-->
+          <div class="border-bottom pt-5 mt-2 mb-5">
+            <h1 class="mt-2 mt-md-4 mb-3 pt-5">Productos</h1>
+            <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+              <p class="text-muted">Este módulo lista todos los productos de la tienda.</p>
+              <p class="font-size-sm font-weight-medium pl-md-4">
+                <a class="text-nowrap" [routerLink]="['/panel/productos']">Regresar<i class="cxi-angle-right font-size-base align-middle ml-1"></i></a></p>
+            </div>
+          </div>
+
+          <div class="card box-shadow-sm" *ngIf="producto == undefined">
+            <div class="card-body">
+              <h3 class="text-center">No se encontro el registro</h3>
+                <div class="row">
+                    <div class="col-3 mx-auto">
+                        <img src="assets/img/components/icono/error.png" alt="" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+          </div>
+          
+          <div class="card box-shadow-sm" *ngIf="producto">
+                <div class="card-header">
+                    <h5 style="margin-bottom: 0px;">Inventario de {{producto.titulo}}</h5>
+                  </div>
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-12">
+                      <form #inventarioForm="ngForm" (ngSubmit)="registro_inventario(inventarioForm)" class="form-inline">
+                        
+               
+
+
+    
+                        <select class="form-control custom-select mb-3 mr-sm-4" id="size" name="talla" [(ngModel)]="inventario.talla">
+                          <option value=""selected disabled>Seleccionar</option>
+                          <option value="{{item.titulo}}" *ngFor="let item of producto.variedades">{{item.titulo}}</option>
+                   
+                        </select>
+
+                        <label class="sr-only">Cantidad</label>
+                        <input required class="form-control mb-3 mr-sm-4" type="text" placeholder="Cantidad" name="cantidad" [(ngModel)]="inventario.cantidad" >
+        
+                      
+                        <button class="btn btn-primary mb-3 mr-3" type="submit">Ingresar</button>
+        
+                        <div class="co1-12 mt-2" (click)="donwload_excel()"><img src="../assets/img/components/icono/excel.png" 
+                          class="excel" style="margin-left: 10px;margin-top: -20px;cursor: pointer;">
+                      </div>
+                      </form>
+                    </div>
+                </div>
+            </div>
+                
+         
+                      
+                          
+              
+
+
+            
+            
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                          <thead class="thead-dark">
+                            <tr>           
+                            <th>Admin</th>
+                            <th>Variedades</th>
+                            <th>Cantidad</th>
+                        
+                            <th>Opciones</th>
+                            </tr>
+                          </thead>
+                          <ng-container *ngIf="inventarios.length == 0">
+                            <tbody>
+                              <tr>
+                                <td colspan="4" class="text-center">
+                                  <span class="text-muted">No hay registros de inventario</span>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </ng-container>
+                          <ng-container>
+                            <tbody *ngFor="let item of inventarios">
+                            <tr>
+                              <td>{{item.admin.nombres}} {{ item.admin.apellidos}}</td>
+                              <td>{{item.talla}}</td>
+                              <td>{{item.cantidad}}</td>
+                           
+                              <td>
+                                <button class="btn btn-danger btn-sm" data-toggle="modal" [attr.data-target]="'#delete-'+item._id">
+                                  <i class="cxi-delete"></i>
+                                </button>
+          
+                                <div class="modal fade" id="delete-{{item._id}}" tabindex="-1" style="display: none;" aria-hidden="true">
+                                  <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h4 class="modal-title">Confirmación de eliminación</h4>
+                                        <button class="btn-close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <p>Desea eliminar este registro?</p>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Cancelar</button>
+                                        <button *ngIf="!load_btn" class="btn btn-primary btn-shadow btn-sm" (click)="eliminar(item._id)" type="button">Si, eliminar</button>
+                                        <button *ngIf="load_btn" type="button" class="btn btn-secondary" disabled>
+                                          <span class="spinner-grow spinner-grow-sm mr-2" role="status" aria-hidden="true"></span>
+                                          Eliminando...
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                         
+                            </tbody>
+                          </ng-container>
+                          
+                  
+
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer">
+              <!--<ngb-pagination
+                  [(page)]="page"
+                  [pageSize]="pageSize"
+                  [collectionSize]=" productos.length"
+                  ></ngb-pagination>--> 
+          </div>         
+       </div>  
+     
+
+

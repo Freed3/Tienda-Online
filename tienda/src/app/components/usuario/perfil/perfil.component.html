@@ -1,0 +1,80 @@
+<app-nav></app-nav>
+
+<main  class="cs-page-wrapper">
+    <nav  class="breadcrumb custom-bg-light-gray" aria-label="breadcrumb">
+        <div class="container">
+          <ol class="breadcrumb breadcrumb-alt mb-0">
+            <li class="breadcrumb-item">
+            <a [routerLink]="['/']"><i class="cxi-home"></i></a>
+            </li>
+            
+            <li class="breadcrumb-item active" aria-current="page">Mi perfil</li>
+          </ol>
+        </div>
+      </nav>
+
+
+
+      <section class="container pt-3 pt-lg-4 pb-5 pb-lg-6">
+        <div class="row pb-2 pb-lg-0">
+
+         <!-- Account menu (sticky sidebar) -->
+         <aside class="col-xl-3 col-lg-4 pb-3 mb-4 mb-lg-0">
+            <app-siderbar></app-siderbar>
+         </aside>
+            
+
+          <!-- Content -->
+          <div class="col-lg-8 ml-auto">
+            <div class="d-flex align-items-center justify-content-between mb-4 pb-1 pb-sm-3">
+              <h1 class="h2 mb-0">Mi Perfil</h1>
+             
+            </div>
+            <form #actulizarForm="ngForm" (ngSubmit)="actulizar(actulizarForm)" >
+              <div class="row pb-3">
+                <div class="col-sm-6 form-group">
+                  <label for="ac-fn">Nombres</label>
+                  <input type="text"  required  class="form-control form-control-lg"  name="nombres" [(ngModel)]="cliente.nombres" placeholder="Nombres completos">
+                </div>
+                <div class="col-sm-6 form-group">
+                  <label for="ac-fn">Apellidos</label>
+                  <input type="text"  required class="form-control form-control-lg"  name="apellidos" [(ngModel)]="cliente.apellidos" placeholder="Apellidos completos">
+                </div>
+                <div class="col-sm-6 form-group">
+                  <label for="ac-email">Correo electronico</label>
+                  <input type="email" required  class="form-control form-control-lg"  readonly value="{{cliente.email}}" >
+                </div>
+                <div class="col-sm-6 form-group">
+                  <label for="ac-phone">Contraseña</label>
+                  <input    type="password"  autocomplete ="new-password" class="form-control form-control-lg"  placeholder="Nueva contraseña"
+                  id="input_password">
+                </div>
+                <div class="col-sm-6 form-group">
+                  <label for="ac-email">Telefono</label>
+                  <input type="number"  required class="form-control form-control-lg" placeholder="987654321" name="telefono" [(ngModel)]="cliente.telefono">
+                </div>
+                <div class="col-sm-6 form-group">
+                  <label for="ac-email">Fecha nacimiento</label>
+                  <input type="date" required class="form-control form-control-lg" name="f_nacimiento" [(ngModel)]="cliente.f_nacimiento">
+                </div>
+
+                <div class="col-sm-6 form-group">
+                  <label for="ac-email">Numero de la Cedula</label>
+                  <input type="number" required  class="form-control form-control-lg" placeholder="12345678" name="dni" [(ngModel)]="cliente.dni">
+                </div>
+             
+           
+          
+            
+          
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg">&nbsp;Actualizar perfil&nbsp;</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+</main>
+
+<app-footer></app-footer>
+

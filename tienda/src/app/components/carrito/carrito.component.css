@@ -1,0 +1,38 @@
+.ps-block__bottom {
+    margin-top: 20px;
+  }
+  
+  .ps-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  .ps-btn--black {
+    background-color: #000;
+  }
+  
+  .ps-btn--black:hover {
+    background-color: #333;
+  }
+  
+  .btnBuy {
+    margin-left: 10px;
+  }
+  
+  .btnBuy:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+
+  .custom-bg-light-gray {
+    background-color: #f0f0f0; /* Cambia el valor al gris claro que prefieras */
+  }

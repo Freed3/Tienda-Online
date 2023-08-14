@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "-": "^0.0.1",
+    "@angular/localize": "^16.1.2",
+    "@ng-bootstrap/ng-bootstrap": "^15.0.1",
+    "mercadopago": "^1.5.16",
+    "ng-starrating": "^1.0.20"
+  }
+}

@@ -1,0 +1,33 @@
+.rating {
+    direction: rtl; /* Establecemos la dirección de derecha a izquierda */
+    display: inline-block;
+  }
+  
+  .rating input {
+    display: none;
+  }
+  
+  .rating label {
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+  }
+  
+  .rating label:before {
+    content: "\2605"; /* Código Unicode para una estrella vacía */
+  }
+  
+  .rating input:checked ~ label {
+    color: #ffcc00; /* Color de las estrellas seleccionadas */
+  }
+  
+  .rating label:hover:before,
+  .rating label:hover ~ label:before {
+    content: "\2605"; /* Código Unicode para una estrella rellena */
+    color: #ffcc00; /* Color de las estrellas al pasar el ratón por encima */
+  }
+  
+
+  .custom-bg-light-gray {
+    background-color: #f0f0f0; /* Cambia el valor al gris claro que prefieras */
+  }

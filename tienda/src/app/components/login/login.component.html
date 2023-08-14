@@ -1,0 +1,93 @@
+<app-nav></app-nav>
+
+<main  
+class="cs-page-wrapper">
+  <h3>Mi cuenta</h3>
+  <ul class="ps-breadcrumb">
+    <li><a style="cursor:pointer" [routerLink]="['/']">Inicio</a></li>
+    <li class="active"><a>Mi cuenta</a></li>
+  </ul>
+  <nav class="bg-secondary mb-3" aria-label="breadcrumb">
+    <div class="container">
+      <ul class="ps-tab-list">
+        <li class="inicio" type="submit" [routerLink]="['/login']"><a>Iniciar sesión</a></li>
+        <li class="registro" type="submit" [routerLink]="['/login/registro']"><a>Registrate</a></li>
+      </ul>
+    </div>
+  </nav>
+</main>
+
+    <section class="container pt-3 pt-md-4 pb-3 pb-sm-4 pb-lg-5 mb-4">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="px-md-5">
+                    <h3 class="modal-title mt-4 mb-0 text-center">Iniciar Sesión</h3>
+                    <p class="font-size-sm text-muted text-center">Sign in to your account using email and password provided during registration.</p>
+                    <div class="ps-tab" >
+                    <form #loginForm="ngForm"(ngSubmit)="func_login(loginForm)"  >
+                      <div class="form-group">
+                        <label for="signin-email">Correo electrónico</label>
+                        <input type="email" class="form-control" placeholder="Correo electrónico" required="" name="email"  [(ngModel)]="user.email">
+                      </div>
+                  
+                      
+
+                        
+                          <div class="form-group">
+    
+                            <div class="row">
+                              <div class="col">
+                                    
+                                <!-- Label -->
+                                <label>Contraseña</label>
+                  
+                              </div>
+                     
+                            </div> <!-- / .row -->
+                  
+                            <!-- Input group -->
+                            <div class="input-group input-group-merge">
+                  
+                              <!-- Input -->
+                              <input type="password" class="form-control form-control-appended" placeholder="Ingresa tu contraseña" id="password" #password="ngModel" name="password" [(ngModel)]="user.password">
+                  
+                              <!-- Icon -->
+                              <div class="input-group-append">
+                                <span class="input-group-text" (click)="view_password();" style="cursor: pointer;">
+                                  <i class="cxi-eye cs-password-toggle-indicator"></i>
+                                </span>
+                              </div>
+                  
+                            </div>
+                          </div>
+                  
+                         
+                    
+                   
+                      <div class="d-flex justify-content-between align-items-center form-group">
+                        <a href="#" class="font-size-sm text-decoration-none">Olvido su contraseña?</a>
+                      </div>
+                      <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+                      <p class="font-size-sm pt-4 mb-0">
+                        No tienes una cuenta?
+                        <a href="#" class="font-weight-bold text-decoration-none"  [routerLink]="['/login/registro']">Registrate</a>
+                      </p>
+                    </form>
+                  </div>
+                </div>
+            </div>
+          </div>
+ 
+        </section>
+     
+  
+
+
+<app-footer></app-footer>
+
+
+
+
+
+
+

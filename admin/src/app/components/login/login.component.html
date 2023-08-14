@@ -1,0 +1,47 @@
+<div class="row" style="width: 100%;
+height: 100%;margin-top: 50px;">
+    <div class=" col-lg-7 mx-auto" style="display: flex;
+    align-items:center;">
+        <div class=" px-md-5 px-4">
+            <h3 class="modal-title mt-4 mb-0 text-center mb-5">Iniciar sesión</h3>
+            <p class="font-size-sm text-muted text-center">Inicie sesión en su cuenta utilizando el correo electrónico y la contraseña proporcionados durante el registro.</p>
+            <form #loginForm="ngForm"(ngSubmit)="login(loginForm)">
+              <div class="form-group">
+                <label for="signin-email">Correo electrónico</label>
+                <input type="email" class="form-control" name="email"[(ngModel)]="user.email" placeholder="Correo electrónico" required="">
+              </div>
+              <div class="form-group">
+    
+                <div class="row">
+                  <div class="col">
+                        
+                    <!-- Label -->
+                    <label>Contraseña</label>
+      
+                  </div>
+         
+                </div> <!-- / .row -->
+      
+                <!-- Input group -->
+                <div class="input-group input-group-merge">
+      
+                  <!-- Input -->
+                  <input type="password" class="form-control form-control-appended" placeholder="Ingresa tu contraseña" id="password" #password="ngModel" name="password" [(ngModel)]="user.password">
+      
+                  <!-- Icon -->
+                  <div class="input-group-append">
+                    <span class="input-group-text" (click)="view_password();" style="cursor: pointer;">
+                      <i class="cxi-eye cs-password-toggle-indicator"></i>
+                    </span>
+                  </div>
+      
+                </div>
+              </div>
+              
+          
+              <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+             
+            </form>
+          </div>
+    </div>
+</div>

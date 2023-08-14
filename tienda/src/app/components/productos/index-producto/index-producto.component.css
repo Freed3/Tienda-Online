@@ -1,0 +1,22 @@
+.contenedor .fila .col-12 {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .imagen-contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+  }
+  
+  .imagen-contenedor img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+
+  .custom-bg-light-gray {
+    background-color: #f0f0f0; /* Cambia el valor al gris claro que prefieras */
+  }
+  
