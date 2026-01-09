@@ -105,12 +105,4 @@ Las contribuciones son bienvenidas:
 * Corrección de errores
 * Documentación
 
----
 
-## 📄 Licencia
-
-Este proyecto es de uso educativo. Puedes adaptarlo y mejorarlo libremente.
-
----
-
-✍️ **Autor:** Freed3
