@@ -41,6 +41,7 @@ Tienda-Online/
 * **CSS**
 * **JavaScript**
 * **Node.js**
+* **MongoDB**
 
 ---
 
